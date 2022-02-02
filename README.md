@@ -1,2 +1,6 @@
 # One-Dimensional-Movement
-Week 2 Exercise to move a ball across the screen and show boundary detection
+Never-Ending Volley
+# Coding Goals
+Move a ball across the screen and show boundary detection.
+# Usage
+This is an exercise I did in Week 2 of the MIT xPro Full Stack Development Bootcamp. These exercises show where I started in my coding development.
