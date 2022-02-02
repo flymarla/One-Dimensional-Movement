@@ -1,0 +1,92 @@
+<div id = "header" style="
+  left: 79;
+  color: gray;
+  ">
+  <h1>The Never-Ending Volley</h1>
+</div>
+
+
+<div id="box" style="
+  z-index:5;
+  position:absolute;
+  left:5px;
+  top:49px;
+  width: 595px;
+  height:399px;
+  border-radius:0%;
+  border-bottom:solid mediumslateblue;
+  border-top:solid mediumslateblue;
+  border-left: solid slateblue;
+  border-right: solid slateblue;
+  "></div>
+
+<div id="left paddle" style="
+  z-index:15;
+  position:absolute;
+  left:79px;
+  top:49px;
+  width:20px;
+  height:50px;
+  border-radius:0%;
+  background: black;
+  "></div>  
+
+<div id="right paddle" style="
+  z-index:15;
+  position:absolute;
+  left:501px;
+  top:49px;
+  width:20px;
+  height:50px;
+  border-radius:0%;
+  background: black;
+  "></div> 
+  
+  <div id="ball" style="
+  z-index:10;
+  position:absolute;
+  left:100px;
+  top:50px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background: cyan"></div>
+
+<script>
+
+var velocityX = 5;
+var velocityY = 3;
+var positionX = 100;
+var positionY = 50;
+var ball = document.getElementById('ball');
+var LP = document.getElementById("left paddle");
+var RP = document.getElementById("right paddle");
+
+function moveBall2D() {
+  positionX = positionX + velocityX;
+  positionY = positionY + velocityY;
+ 
+  // move ball
+  ball.style.left = positionX + 'px';
+  ball.style.top = positionY + 'px';
+
+  // edge detection & move paddle
+  if (positionX > 450) {
+    RP.style.top = positionY + 'px';
+    velocityX = -velocityX;
+  }
+  if (positionX < 105){  
+    LP.style.top = positionY + 'px';
+    velocityX = -velocityX;
+  }
+  if (positionY > 399) {
+    velocityY = -velocityY
+  }
+  if (positionY < 52) {
+    velocityY = -velocityY;
+  }
+}
+
+setInterval(moveBall2D,50);
+
+</script>
